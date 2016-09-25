@@ -48,9 +48,9 @@ std::time_t parse_time(const std::string& entry)
 	std::stringstream entry_stream(entry);
 	std::string date;
 	std::string time;
-	//std::string time="0:0:0";
 
 
+	// Parse date
 	if( !std::getline(entry_stream, date, '/').eof() || date.find("-") != std::string::npos)
 	{
 		if(date.find(":") != std::string::npos)
@@ -92,7 +92,7 @@ std::time_t parse_time(const std::string& entry)
 
 	std::getline(entry_stream, time);
 
-	// parse time
+	// Parse time
 	if( time.find("-") != std::string::npos )
 	{
 		throw std::invalid_argument("Passed time mixed up date separator (-) and time separator(:) in the time part.");
