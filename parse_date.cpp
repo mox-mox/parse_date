@@ -4,32 +4,32 @@
 #include <sstream>
 
 
-// 1989-01-21/04:20:00
-// 1989-01-21/04:20
-// 1989-01-21/04
+// 1989-01-21T04:20:00
+// 1989-01-21T04:20
+// 1989-01-21T04
 // 1989-01-21
 
-//      01-21/04:20:00
-//      01-21/04:20
-//      01-21/04
-//      01-21/
+//      01-21T04:20:00
+//      01-21T04:20
+//      01-21T04
+//      01-21T
 
-//         21/04:20:00
-//         21/04:20
-//         21/04
-//         21/
+//         21T04:20:00
+//         21T04:20
+//         21T04
+//         21T
 
-//           /04:20:00
-//           /04:20
-//           /04
-//           /
+//           T04:20:00
+//           T04:20
+//           T04
+//           T
 
 
 
 #include <iostream>
 
 
-// [[[<yyyy>-]<mm>-]<dd>]/[<hh>[:<mm>[:<ss>]]]
+// [[[<yyyy>-]<mm>-]<dd>]T[<hh>[:<mm>[:<ss>]]]
 
 
 
@@ -51,7 +51,7 @@ std::time_t parse_time(const std::string& entry)
 
 
 	// Parse date
-	if( !std::getline(entry_stream, date, '/').eof() || date.find("-") != std::string::npos)
+	if( !std::getline(entry_stream, date, 'T').eof() || date.find("-") != std::string::npos)
 	{
 		if(date.find(":") != std::string::npos)
 		{
